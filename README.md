@@ -3,25 +3,37 @@
 This is an experimental project to have a dummy backend when trying out new
 stuff. Very simple backend for serving an index.html and json files as fake API.
 
-Serves from index.html from ./public/index.html as a relative path to the
-dummyhttp binary.
+Serves from index.html from ./public/index.html as a relative path of where you
+executed dummyhttp binary.
+
+### Install
+Assuming you have a proper go setup
 
 ``` bash
-./dummyhttp
+go get github.com/efegurkan/dummyhttp
 ```
-to serve from localhost:1234
 
-or
+### Usage
+``` bash
+$GOPATH/bin/dummyhttp
+```
+
+By default it starts on port 1234
+``` bash
+$GOPATH/bin/dummyhttp
+```
+
+or you can give a specific port number
 
 ``` bash
-./dummyhttp portnumber
+$GOPATH/bin/dummyhttp 5555
 ```
-to serve from localhost:portnumber.
+will serve from localhost:5555
 
 
-.json files are also served from /api/
+.json files are served from /api/
 
 ``` bash
 localhost:1234/api/fakeapi/lol.json
 ```
-serves ./fakeapi/lol.json
+serves /fakeapi/lol.json
